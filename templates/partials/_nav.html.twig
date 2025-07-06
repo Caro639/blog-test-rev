@@ -1,0 +1,238 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-dark"
+>
+  <div class="container px-4 px-lg-5">
+    <a
+      class="navbar-brand"
+      href="{{ path('app_home') }}"
+      >Blog Révélations</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul
+        class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="{{ path('app_home') }}"
+            >Accueil</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!"
+            >A propos</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Cafés</a
+          >
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                >Tous les cafés</a
+              >
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                >Préféré</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                >Populaires</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                >Nouveautés</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdownCompte"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Connexion</a
+          >
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
+            <li class="text-center">
+              Compte client
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            {% if app.user %}
+            <li>
+              <a
+                class="dropdown-item"
+                hre"#"
+                {# href="{{ path('profile_index.profile', { id: app.user.id }) }}" #}
+                >Mon compte</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                {# href="{{ path('app_orders_list', { id: app.user.id }) }}" #}
+                >Mes posts</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('app_logout')}}" #}
+                >Se déconnecter</a
+              >
+            </li>
+
+            {% else %}
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('app_login')}}" #}
+                >Connexion</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('app_register')}}" #}
+                >Inscription</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </li>
+        {# {% if is_granted('ROLE_PRODUCT_ADMIN') %} #}
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdownAdmin"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Administration</a
+          >
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
+            <li class="text-center">PauseCafé</li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('admin_modify_index.modify')}}" #}
+                >Administration</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('admin')}}" #}
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('admin_product_index.admin')}}" #}
+                >Mes produits</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('admin_product_add.admin')}}" #}
+                >Ajouter des produits</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="#"
+                {# href="{{ path('admin_users_index')}}" #}
+                >Les clients</a
+              >
+            </li>
+            {# {% endif %} #}
+          </ul>
+        </li>
+      </ul>
+
+      <form class="d-flex">
+        <button
+          class="btn btn-outline-light"
+          type="submit"
+        >
+          <i class="bi-cart-fill me-1"></i>
+          <a href="#"
+          {# <a href="{{ path('cart_index.cart') }}" #}
+            class="text-decoration-none text-reset"
+            >Profil</a>
+          <span
+            class="badge bg-light text-white ms-1 rounded-pill"
+            >
+            {# {{ cartTotalQuantity }} #}
+            </span
+          >
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
